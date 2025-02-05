@@ -1,0 +1,137 @@
+/* Global resets & background */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  overflow: hidden;
+}
+
+/* Page container */
+.page {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  padding: 20px;
+}
+
+/* Headings & Text */
+h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.5rem;
+  color: #fff;
+  max-width: 600px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+button {
+  background-color: #ff6f91;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #ff3f6f;
+  transform: scale(1.05);
+}
+
+/* Button Group Container (for Home page buttons) */
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;  /* Adds space between buttons */
+}
+
+/* Container for hearts (common for both pages) */
+.hearts-container,
+.animation-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* so they don’t interfere with clicks */
+  overflow: hidden;
+}
+
+/* Heart styling and animation */
+.heart {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 8s linear infinite;
+  opacity: 0.8;
+}
+
+/* Floating hearts animation */
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Position and timing variations for the hearts on the Home page */
+.hearts-container .heart:nth-child(1)  { left: 10%; animation-duration: 10s; animation-delay: 0s; }
+.hearts-container .heart:nth-child(2)  { left: 20%; animation-duration: 9s;  animation-delay: 2s; }
+.hearts-container .heart:nth-child(3)  { left: 30%; animation-duration: 11s; animation-delay: 4s; }
+.hearts-container .heart:nth-child(4)  { left: 40%; animation-duration: 8s;  animation-delay: 1s; }
+.hearts-container .heart:nth-child(5)  { left: 50%; animation-duration: 12s; animation-delay: 3s; }
+.hearts-container .heart:nth-child(6)  { left: 60%; animation-duration: 9s;  animation-delay: 5s; }
+.hearts-container .heart:nth-child(7)  { left: 70%; animation-duration: 10s; animation-delay: 0s; }
+.hearts-container .heart:nth-child(8)  { left: 80%; animation-duration: 8s;  animation-delay: 2s; }
+.hearts-container .heart:nth-child(9)  { left: 90%; animation-duration: 11s; animation-delay: 4s; }
+.hearts-container .heart:nth-child(10) { left: 15%; animation-duration: 9s;  animation-delay: 1s; }
+.hearts-container .heart:nth-child(11) { left: 25%; animation-duration: 10s; animation-delay: 3s; }
+.hearts-container .heart:nth-child(12) { left: 35%; animation-duration: 8s;  animation-delay: 2s; }
+.hearts-container .heart:nth-child(13) { left: 45%; animation-duration: 12s; animation-delay: 4s; }
+.hearts-container .heart:nth-child(14) { left: 55%; animation-duration: 9s;  animation-delay: 0s; }
+.hearts-container .heart:nth-child(15) { left: 65%; animation-duration: 11s; animation-delay: 3s; }
+.hearts-container .heart:nth-child(16) { left: 75%; animation-duration: 10s; animation-delay: 1s; }
+.hearts-container .heart:nth-child(17) { left: 85%; animation-duration: 8s;  animation-delay: 2s; }
+.hearts-container .heart:nth-child(18) { left: 95%; animation-duration: 9s;  animation-delay: 4s; }
+.hearts-container .heart:nth-child(19) { left: 5%;  animation-duration: 10s; animation-delay: 3s; }
+.hearts-container .heart:nth-child(20) { left: 50%; animation-duration: 11s; animation-delay: 1s; }
+
+/* For the Valentine page, you can add a different spin animation (optional) */
+.animation-container .heart {
+  font-size: 3rem;
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(180deg) translateY(-20px); }
+  100% { transform: rotate(360deg) translateY(0); }
+}
